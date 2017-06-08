@@ -3,12 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>Using Device Camera</title>
+        <link rel="stylesheet" href="styles.css"/>
     </head>
     <body>
-        <video autoplay id="video"></video>
-        <canvas id="canvas"></canvas>
-        <br />
-        <button onclick="snap();">Snap</button>
+        <div id="container">
+            <video autoplay id="video"></video>
+            <canvas id="canvas"></canvas>
+            <br />
+            <button onclick="snap();">Snap</button>
+        </div>
         <script>
             var video = document.getElementById('video');
             var canvas = document.getElementById('canvas');
@@ -25,7 +28,7 @@
             }
 
             function throwError(e){
-                alter(e.name);
+                alert(e.name);
             }
 
             function snap(){
