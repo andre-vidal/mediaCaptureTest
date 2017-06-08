@@ -22,6 +22,8 @@
 
             if(navigator.getUserMedia){
                 navigator.getUserMedia({video:true}, streamWebCam, throwError);
+            }else{
+                alert("getUserMedia is not supported in this browser :(");
             }
 
             function streamWebCam(stream){
