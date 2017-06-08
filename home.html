@@ -19,9 +19,7 @@
             var context = canvas.getContext('2d');
 
             if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-                    video.src = window.URL.createObjectURL(stream);
-                });
+                navigator.mediaDevices.getUserMedia({ video: true }).then(streamWebCam, throwError);
             }else{
                 alert("getUserMedia is not supported in this browser :(");
             }
@@ -29,7 +27,6 @@
             function streamWebCam(stream){
                 video.src = window.URL.createObjectURL(stream);
             }
-
             function throwError(e){
                 alert(e.name);
             }
